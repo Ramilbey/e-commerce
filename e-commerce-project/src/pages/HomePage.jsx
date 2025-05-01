@@ -1,9 +1,10 @@
-import './header.css';
-import './HomePage.css';
+import "./header.css";
+import "./HomePage.css";
 
 export function HomePage() {
   return (
     <>
+      <title>Ecommerce Project</title>
       <div className="header">
         <div className="left-section">
           <a href="index.html" className="header-link">
