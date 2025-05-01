@@ -1,4 +1,4 @@
-function HomePage() {
+export function HomePage() {
   return (
     <>
       <div className="header">
