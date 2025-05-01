@@ -1,8 +1,26 @@
-# React + Vite
+# 🛍️ React E-Commerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive **E-Commerce web application** built with **React.js**. It features product listings, a shopping cart, dynamic quantity handling, and a clean user interface — perfect for learning or expanding into a full-stack application.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> _Add your deployed site link here (e.g., Netlify, Vercel, GitHub Pages)_
+
+## ⚙️ Features
+
+- 🖼️ Product listing grid
+- 🛒 Add to cart functionality
+- ➕➖ Quantity controls per item
+- 💵 Real-time cart total calculation
+- 🧼 Clear cart button
+- 📱 Responsive design
+
+## 🚀 Tech Stack
+
+- **React.js** – Frontend UI library
+- **JavaScript (ES6+)** – Programming language
+- **CSS3** – Styling  
+- **HTML5** – Markup
+
+## 📁 Project Structure
+
