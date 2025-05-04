@@ -1,5 +1,5 @@
 import { Header } from "../components/Header";
-import { products } from "../../starting-code/date/products";
+import { products } from "../../starting-code/data/products";
 import "./HomePage.css";
 
 export function HomePage() {
@@ -10,10 +10,10 @@ export function HomePage() {
       <Header />
       <div className="home-page">
         <div className="products-grid">
-          {products.map(() => {
+          {products.map((product) => {
             return (
-              <>
-                <div className="product-container">
+              
+                <div key = {product.id} className="product-container">
                   <div className="product-image-container">
                     <img
                       className="product-image"
@@ -61,7 +61,7 @@ export function HomePage() {
                     Add to Cart
                   </button>
                 </div>
-              </>
+              
             );
           })}
           <div className="product-container">
