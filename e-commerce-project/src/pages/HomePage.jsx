@@ -27,13 +27,13 @@ export function HomePage() {
 
                   <div className="product-rating-container">
                     <img
-                      className="product-rating-stars"
-                      src="images/ratings/rating-45.png"
+                            className="product-rating-stars"
+                            src={`images/ratings/rating-${product.rating.stars * 10 }.png`}
                     />
-                    <div className="product-rating-count link-primary">87</div>
+                        <div className="product-rating-count link-primary">{ product.rating.count}</div>
                   </div>
 
-                  <div className="product-price">$10.90</div>
+                    <div className="product-price">${ product.priceCents / 100}</div>
 
                   <div className="product-quantity-container">
                     <select>
