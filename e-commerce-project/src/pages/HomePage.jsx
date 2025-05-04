@@ -1,4 +1,5 @@
 import { Header } from "../components/Header";
+import {products } from "../../starting-code/date/products"
 import "./HomePage.css";
 
 export function HomePage() {
