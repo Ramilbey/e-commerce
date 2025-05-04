@@ -17,12 +17,12 @@ export function HomePage() {
                   <div className="product-image-container">
                     <img
                       className="product-image"
-                      src="images/products/athletic-cotton-socks-6-pairs.jpg"
+                      src={product.image}
                     />
                   </div>
 
                   <div className="product-name limit-text-to-2-lines">
-                    Black and Gray Athletic Cotton Socks - 6 Pairs
+                    {product.name}
                   </div>
 
                   <div className="product-rating-container">
