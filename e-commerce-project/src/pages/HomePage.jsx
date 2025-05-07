@@ -2,6 +2,7 @@ import axios from "axios";
 import { use, useEffect, useState } from "react";
 import { Header } from "../components/Header";
 
+
 import "./HomePage.css";
 
 export function HomePage({cart}) {
