@@ -50,7 +50,7 @@ export function CheckoutPage({ cart }) {
                       <div className="product-name">
                         {cartItem.product.name}
                       </div>
-                      <div className="product-price">$10.90</div>
+                              <div className="product-price">{(cartItem.product.priceCents /100).toFixed(2)}</div>
                       <div className="product-quantity">
                         <span>
                           Quantity: <span className="quantity-label">2</span>
