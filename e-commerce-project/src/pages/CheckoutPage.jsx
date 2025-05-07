@@ -54,7 +54,7 @@ export function CheckoutPage({ cart }) {
                               <div className="product-price">{formatMoney(cartItem.product.priceCents)}</div>
                       <div className="product-quantity">
                         <span>
-                          Quantity: <span className="quantity-label">2</span>
+                                      Quantity: <span className="quantity-label">{ cartItem.quantity}</span>
                         </span>
                         <span className="update-quantity-link link-primary">
                           Update
