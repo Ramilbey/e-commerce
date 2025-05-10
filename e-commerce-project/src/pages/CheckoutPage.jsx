@@ -1,6 +1,9 @@
+import axios from 'axios'
+import {useState, useEffect} from 'react'
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 import { formatMoney } from "../utilis/money";
+import { useEffect, useState } from 'react';
 
 export function CheckoutPage({ cart }) {
   return (
