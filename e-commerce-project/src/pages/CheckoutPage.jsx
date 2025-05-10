@@ -4,7 +4,7 @@ import "./checkout-header.css";
 import "./CheckoutPage.css";
 import { formatMoney } from "../utilis/money";
 import { useEffect, useState } from "react";
-import { response } from "express";
+// import { response } from "express";x
 
 export function CheckoutPage({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -16,13 +16,12 @@ export function CheckoutPage({ cart }) {
       .then((response) => {
         setDeliveryOptions(response.data);
       });
-    axios
-      .get("/api/payment-summary")
-      .then((response) => {
-        setPaymentSummary(response.data);
+
+    axios.get("/api/payment-summary").then((response) => {
+      setPaymentSummary(response.data);
     });
   }, []);
-    
+
   return (
     <>
       <title>Checkout</title>
