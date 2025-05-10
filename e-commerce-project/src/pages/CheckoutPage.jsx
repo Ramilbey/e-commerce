@@ -6,6 +6,7 @@ import { formatMoney } from "../utilis/money";
 import { useEffect, useState } from 'react';
 
 export function CheckoutPage({ cart }) {
+    const [deliveryOptions, setDeliveryOptions] = useState([])
   return (
     <>
       <title>Checkout</title>
