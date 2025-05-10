@@ -78,7 +78,27 @@ export function CheckoutPage({ cart }) {
                     <div className="delivery-options">
                       <div className="delivery-options-title">
                         Choose a delivery option:
-                      </div>
+                              </div>
+                              {deliveryOptions.map((deliveryOption) => {
+                                  return (
+                                    <div key = {deliveryOptions.id} className="delivery-option">
+                                    <input
+                                      type="radio"
+                                      checked
+                                      className="delivery-option-input"
+                                      name="delivery-option-1"
+                                    />
+                                    <div>
+                                      <div className="delivery-option-date">
+                                        Tuesday, June 21
+                                      </div>
+                                      <div className="delivery-option-price">
+                                        FREE Shipping
+                                      </div>
+                                    </div>
+                                  </div>
+                                  )
+                              })}
                       <div className="delivery-option">
                         <input
                           type="radio"
