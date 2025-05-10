@@ -99,7 +99,7 @@ export function CheckoutPage({ cart }) {
                           >
                             <input
                               type="radio"
-                              checked
+                              checked = {deliveryOption.id === cartItem.deliveryOptionId}
                               className="delivery-option-input"
                               name= {`delivery-option-${cartItem.productId}`}
                             />
