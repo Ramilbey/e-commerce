@@ -1,4 +1,5 @@
 import axios from 'axios'
+import dayjs from 'dayjs'
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 import { formatMoney } from "../utilis/money";
@@ -81,7 +82,7 @@ export function CheckoutPage({ cart }) {
                               </div>
                               {deliveryOptions.map((deliveryOption) => {
                                   return (
-                                    <div key = {deliveryOptions.id} className="delivery-option">
+                                    <div key = {deliveryOption.id} className="delivery-option">
                                     <input
                                       type="radio"
                                       checked
@@ -89,8 +90,9 @@ export function CheckoutPage({ cart }) {
                                       name="delivery-option-1"
                                     />
                                     <div>
-                                      <div className="delivery-option-date">
-                                        Tuesday, June 21
+                                              <div className="delivery-option-date">
+                                                  {dayjs(deliveryOption.estimatedDeliveryTimeMs).format("dddd, MMMM D")}
+                                        
                                       </div>
                                       <div className="delivery-option-price">
                                         FREE Shipping
