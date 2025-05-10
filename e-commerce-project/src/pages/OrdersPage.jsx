@@ -2,8 +2,15 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import "./OrdersPage.css";
+// import { response } from "express";
 
-export function OrdersPage( {cart} ) {
+export function OrdersPage({ cart }) {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    axios.get("/api/orders?expand=products").then((response) => {
+      setOrders(response.data);
+    });
+  }, []);
   return (
     <>
       <title>Orders</title>
@@ -12,6 +19,11 @@ export function OrdersPage( {cart} ) {
         <div className="page-title">Your Orders</div>
 
         <div className="orders-grid">
+          {orders.map((order) => {
+            return (
+
+            ); 
+          })}
           <div className="order-container">
             <div className="order-header">
               <div className="order-header-left-section">
