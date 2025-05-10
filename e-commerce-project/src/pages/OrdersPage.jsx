@@ -43,7 +43,7 @@ export function OrdersPage({ cart }) {
                 </div>
 
                 <div className="order-details-grid">
-                  {order.procucts.map((orderProduct) => {
+                  {order.products.map((orderProduct) => {
                     return (
                       <Fragment key={orderProduct.product.id}>
                         <div className="product-image-container">
