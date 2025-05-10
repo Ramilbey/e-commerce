@@ -1,19 +1,20 @@
-import axios from 'axios'
-import dayjs from 'dayjs'
+import axios from "axios";
+import dayjs from "dayjs";
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 import { formatMoney } from "../utilis/money";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function CheckoutPage({ cart }) {
-    const [deliveryOptions, setDeliveryOptions] = useState([]);
+  const [deliveryOptions, setDeliveryOptions] = useState([]);
 
-    useEffect(() => {
-        axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
-            .then((response) => {
-                setDeliveryOptions(response.data)
-            })
-    }, [])
+  useEffect(() => {
+    axios
+      .get("/api/delivery-options?expand=estimatedDeliveryTime")
+      .then((response) => {
+        setDeliveryOptions(response.data);
+      });
+  }, []);
   return (
     <>
       <title>Checkout</title>
@@ -47,7 +48,7 @@ export function CheckoutPage({ cart }) {
           <div className="order-summary">
             {cart.map((cartItem) => {
               return (
-                <div key = {cartItem.productId} className="cart-item-container">
+                <div key={cartItem.productId} className="cart-item-container">
                   <div className="delivery-date">
                     Delivery date: Tuesday, June 21
                   </div>
@@ -62,10 +63,15 @@ export function CheckoutPage({ cart }) {
                       <div className="product-name">
                         {cartItem.product.name}
                       </div>
-                              <div className="product-price">{formatMoney(cartItem.product.priceCents)}</div>
+                      <div className="product-price">
+                        {formatMoney(cartItem.product.priceCents)}
+                      </div>
                       <div className="product-quantity">
                         <span>
-                                      Quantity: <span className="quantity-label">{ cartItem.quantity}</span>
+                          Quantity:{" "}
+                          <span className="quantity-label">
+                            {cartItem.quantity}
+                          </span>
                         </span>
                         <span className="update-quantity-link link-primary">
                           Update
@@ -79,28 +85,37 @@ export function CheckoutPage({ cart }) {
                     <div className="delivery-options">
                       <div className="delivery-options-title">
                         Choose a delivery option:
-                              </div>
+                      </div>
                               {deliveryOptions.map((deliveryOption) => {
-                                  return (
-                                    <div key = {deliveryOption.id} className="delivery-option">
-                                    <input
-                                      type="radio"
-                                      checked
-                                      className="delivery-option-input"
-                                      name="delivery-option-1"
-                                    />
-                                    <div>
-                                              <div className="delivery-option-date">
-                                                  {dayjs(deliveryOption.estimatedDeliveryTimeMs).format("dddd, MMMM D")}
-                                        
-                                      </div>
-                                      <div className="delivery-option-price">
-                                        FREE Shipping
-                                      </div>
-                                    </div>
-                                  </div>
-                                  )
-                              })}
+                                  let priceString = 'FREE SHIPPING';
+
+                                  if (deliveryOption.priceCents > 0) {
+                                      priceString = `${formatMoney(deliveryOption.priceCents)} - Shipping`
+                                  }
+                        return (
+                          <div
+                            key={deliveryOption.id}
+                            className="delivery-option"
+                          >
+                            <input
+                              type="radio"
+                              checked
+                              className="delivery-option-input"
+                              name="delivery-option-1"
+                            />
+                            <div>
+                              <div className="delivery-option-date">
+                                {dayjs(
+                                  deliveryOption.estimatedDeliveryTimeMs
+                                ).format('dddd, MMMM, D')}
+                              </div>
+                              <div className="delivery-option-price">
+                                {priceString}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                       <div className="delivery-option">
                         <input
                           type="radio"
