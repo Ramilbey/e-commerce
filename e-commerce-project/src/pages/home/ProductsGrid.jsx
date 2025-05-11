@@ -1,6 +1,5 @@
 import { formatMoney } from "../../utilis/money";
 
-impoer {formatMoney}
 export function ProductsGrid({ products }) {
   return (
     <div className="products-grid">
