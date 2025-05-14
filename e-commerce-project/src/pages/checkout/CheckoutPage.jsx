@@ -53,7 +53,7 @@ export function CheckoutPage({ cart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-      <OrderSummary cart= {cart}, deliveryOptions = {deliveryOptions} />
+      <OrderSummary cart= {cart} deliveryOptions = {deliveryOptions} />
 
           <div className="payment-summary">
             <div className="payment-summary-title">Payment Summary</div>
