@@ -1,9 +1,11 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import "./checkout-header.css";
-import "./CheckoutPage.css";
 import { formatMoney } from "../../utilis/money";
 import { useEffect, useState } from "react";
+import { OrderSummary } from "./OrderSummary";
+import "./checkout-header.css";
+import "./CheckoutPage.css";
+
 // import { response } from "express";x
 
 export function CheckoutPage({ cart }) {
@@ -52,7 +54,7 @@ export function CheckoutPage({ cart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-      
+      <OrderSummary cart= {cart}, deliveryOptions = {deliveryOptions} />
 
           <div className="payment-summary">
             <div className="payment-summary-title">Payment Summary</div>
