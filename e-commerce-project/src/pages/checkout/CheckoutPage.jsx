@@ -1,5 +1,4 @@
 import axios from "axios";
-import dayjs from "dayjs";
 import { formatMoney } from "../../utilis/money";
 import { useEffect, useState } from "react";
 import { OrderSummary } from "./OrderSummary";
