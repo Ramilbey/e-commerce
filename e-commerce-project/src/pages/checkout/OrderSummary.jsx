@@ -1,4 +1,4 @@
-export function OrderSummary() {
+export function OrderSummary({cart , deliveryOption}) {
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&
