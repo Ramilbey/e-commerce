@@ -1,7 +1,7 @@
 import axios from "axios";
-import { formatMoney } from "../../utilis/money";
 import { useEffect, useState } from "react";
 import { OrderSummary } from "./OrderSummary";
+import { PaymentSummary } from "./PaymentSummary";
 import "./checkout-header.css";
 import "./CheckoutPage.css";
 
@@ -53,9 +53,9 @@ export function CheckoutPage({ cart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-      <OrderSummary cart= {cart} deliveryOptions = {deliveryOptions} />
+          <OrderSummary cart={cart} deliveryOptions={deliveryOptions} />
 
-          <PaymentSummary paymentSummary={ paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary} />
         </div>
       </div>
     </>

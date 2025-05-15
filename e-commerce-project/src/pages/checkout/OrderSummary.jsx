@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { formatMoney } from "../../utilis/money";
 
-export function OrderSummary({ cart, deliveryOption }) {
+export function OrderSummary({ cart, deliveryOptions }) {
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&

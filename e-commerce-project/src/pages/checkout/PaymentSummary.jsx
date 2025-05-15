@@ -1,5 +1,5 @@
 import { formatMoney } from "../../utilis/money";
-export function PaymentSummary([paymentSummary]) {
+export function PaymentSummary({ paymentSummary }) {
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
