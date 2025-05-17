@@ -1,7 +1,7 @@
 import axios from "axios";
 import { use, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
-import {ProductsGrid} from './ProductsGrid' 
+import { ProductsGrid } from "./ProductsGrid";
 
 import "./HomePage.css";
 
@@ -9,8 +9,12 @@ export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(async () => {
-    const responce = await axios.get("/api/products");
+    const getHomeData = async () => {
+      const response = await axios.get("/api/products");
       setProducts(response.data);
+    };
+
+    getHomeData();
   }, []);
 
   return (
@@ -19,7 +23,7 @@ export function HomePage({ cart }) {
 
       <Header cart={cart} />
       <div className="home-page">
-        <ProductsGrid products={products}/>
+        <ProductsGrid products={products} />
       </div>
     </>
   );
