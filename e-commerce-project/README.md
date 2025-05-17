@@ -22,5 +22,13 @@ A simple and responsive **E-Commerce web application** built with **React.js**. 
 - **CSS3** – Styling  
 - **HTML5** – Markup
 
-## 📁 Project Structure
+## 📁 what I learn
+Backend - Manage the data
+Set up backend for the project
+Data fetching
+axios - easier way to make request to the backend
+Generate html using the data from the backend
+Seperated into smaller components
+Async await -write asyncronous code like normal code
+
 
