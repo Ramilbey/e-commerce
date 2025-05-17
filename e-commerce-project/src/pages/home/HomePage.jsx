@@ -8,10 +8,9 @@ import "./HomePage.css";
 export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    axios.get("/api/products").then((response) => {
+  useEffect(async () => {
+    const responce = await axios.get("/api/products");
       setProducts(response.data);
-    });
   }, []);
 
   return (
