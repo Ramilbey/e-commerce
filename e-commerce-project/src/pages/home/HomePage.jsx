@@ -8,7 +8,7 @@ import "./HomePage.css";
 export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
 
-  useEffect(async () => {
+  useEffect( () => {
     const getHomeData = async () => {
       const response = await axios.get("/api/products");
       setProducts(response.data);
