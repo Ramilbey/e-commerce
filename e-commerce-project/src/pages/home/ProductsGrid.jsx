@@ -53,7 +53,10 @@ export function ProductsGrid({ products }) {
 
             <button className="add-to-cart-button button-primary"
               onClick={() => {
-                axios.post('/api/cart')
+                axios.post('/api/cart-items', {
+                  productId: product.id,
+                  quantity: 1 
+                })
               
             }}>
               Add to Cart
