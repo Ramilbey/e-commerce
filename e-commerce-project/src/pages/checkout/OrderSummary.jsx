@@ -9,7 +9,7 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
     <div className="order-summary">
       {deliveryOptions.length > 0 &&
         cart.map((cartItem) => {
-          const [quantity, setQuantity] = useState(cartItem.quantity);
+          const [selectedQuantity, setSelectedQuantity] = useState(cartItem.quantity);
           const selectedDeliveryOption = deliveryOptions.find(
             (deliveryOption) => {
               return deliveryOption.id === cartItem.deliveryOptionId;
@@ -17,14 +17,14 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
           );
           const updateCartItem = async () => {
             await axios.put(`/api/cart-items/${cartItem.productId}`, {
-              quantity: cartItem.quantity,
+              quantity: selectedQuantity,
               // deliveryOptionId: cartItem.deliveryOptionId
             });
             await loadCart();
           };
           const updateQuantity = async (event) => {
             const quantitySelected = Number(event.target.value);
-            setQuantity(quantitySelected)
+            setSelectedQuantity(quantitySelected);
           };
           const deleteCartItem = async () => {
             await axios.delete(`/api/cart-items/${cartItem.productId}`);
