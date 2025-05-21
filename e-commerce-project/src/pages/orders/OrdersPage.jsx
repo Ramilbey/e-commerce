@@ -13,6 +13,7 @@ export function OrdersPage({ cart }) {
       const response = await axios.get("/api/orders?expand=products")
         setOrders(response.data); 
     }
+    fetchOrdersData();
   }, []);
   return (
     <>
