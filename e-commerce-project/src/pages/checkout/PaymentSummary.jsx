@@ -1,5 +1,9 @@
+import axios from "axios";
 import { formatMoney } from "../../utilis/money";
 export function PaymentSummary({ paymentSummary }) {
+  const createOrder = async () => {
+    axios.post(`/api/orders`);
+  }
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
@@ -40,7 +44,8 @@ export function PaymentSummary({ paymentSummary }) {
             </div>
           </div>
 
-          <button className="place-order-button button-primary">
+          <button className="place-order-button button-primary"
+          onClick={createOrder}>
             Place your order
           </button>
         </>
