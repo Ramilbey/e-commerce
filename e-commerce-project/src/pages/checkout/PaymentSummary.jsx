@@ -1,8 +1,9 @@
 import axios from "axios";
 import { formatMoney } from "../../utilis/money";
-export function PaymentSummary({ paymentSummary }) {
+export function PaymentSummary({ paymentSummary, loadCart }) {
   const createOrder = async () => {
     await axios.post(`/api/orders`);
+    await loadCart()
   }
   return (
     <div className="payment-summary">
