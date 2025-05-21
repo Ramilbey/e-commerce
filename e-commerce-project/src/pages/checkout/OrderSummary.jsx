@@ -14,10 +14,12 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
             }
           );
           const updateCartItem = async () => {
-            await axios.put(`/api/cart-items/${cartItem.productId}`);
+            await axios.put(`/api/cart-items/${cartItem.productId}`, {
+              quantity: cartItem.quantity,
+              // deliveryOptionId: cartItem.deliveryOptionId
+            });
             await loadCart();
           };
-
           const deleteCartItem = async () => {
             await axios.delete(`/api/cart-items/${cartItem.productId}`);
             await loadCart();
