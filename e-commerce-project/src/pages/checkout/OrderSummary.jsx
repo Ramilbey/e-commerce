@@ -15,7 +15,8 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
           );
 
           const deleteCartItem = async () => {
-            axios.delete(`/api/cart-item/${cartItem.productId}`)
+            await axios.delete(`/api/cart-items/${cartItem.productId}`)
+            await loadCart()
           }
           return (
             <div key={cartItem.productId} className="cart-item-container">
