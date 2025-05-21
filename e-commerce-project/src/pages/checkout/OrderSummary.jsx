@@ -2,12 +2,14 @@ import dayjs from "dayjs";
 import { formatMoney } from "../../utilis/money";
 import { DeliveryOptions } from "./DeliveryOptions";
 import axios from "axios";
+import { useState } from "react";
 
 export function OrderSummary({ cart, deliveryOptions, loadCart }) {
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&
         cart.map((cartItem) => {
+          const [quantity, setQuantity] = useState(cartItem.quantity);
           const selectedDeliveryOption = deliveryOptions.find(
             (deliveryOption) => {
               return deliveryOption.id === cartItem.deliveryOptionId;
@@ -19,6 +21,10 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
               // deliveryOptionId: cartItem.deliveryOptionId
             });
             await loadCart();
+          };
+          const updateQuantity = async (event) => {
+            const quantitySelected = Number(event.target.value);
+            setQuantity(quantitySelected)
           };
           const deleteCartItem = async () => {
             await axios.delete(`/api/cart-items/${cartItem.productId}`);
@@ -44,9 +50,21 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
                   <div className="product-quantity">
                     <span>
                       Quantity:{" "}
-                      <span className="quantity-label">
+                      <select value={quantity} onChange={updateQuantity}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        {/* <span className="quantity-label">
                         {cartItem.quantity}
-                      </span>
+                      </span> */}
+                      </select>
                     </span>
                     <span
                       className="update-quantity-link link-primary"
