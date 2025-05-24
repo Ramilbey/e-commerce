@@ -41,3 +41,10 @@ A simple and responsive **E-Commerce web application** built with **React.js**. 
 12. DELETE request: delete a product from the cart  
 13. Dependency Array to update the payment summary  
 14. useNavigate = navigate to another page using our code  
+15. Automated tests with Vitest
+16. unit test = test 1 piece of the code
+17. Integration test = test mutliple pieces of the code
+18. it(), expect(), describe()
+19. test component (using render and screen)
+20. mock = fake version of a function/ package
+21. mock the implementation = make a mock do what we want
