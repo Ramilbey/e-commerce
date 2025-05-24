@@ -1,5 +1,6 @@
 import { it, expect, describe, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import { HomePage } from "./HomePage";
@@ -12,7 +13,7 @@ describe("HomePage component", () => {
   beforeEach(() => {
     loadCart = vi.fn();
 
-    axios.get.mockImplementation((urlPath) => {
+    axios.get.mockImplementation(async (urlPath) => {
       if (urlPath === "/api/products") {
         return {
           data: [
@@ -44,6 +45,10 @@ describe("HomePage component", () => {
     });
   });
   it("displays the products correct ", () => {
-    render(<HomePage cart={[]} loadCart={loadCart} />);
+    render(
+      <MemoryRouter>
+        <HomePage cart={[]} loadCart={loadCart} />
+      </MemoryRouter>
+    );
   });
 });
