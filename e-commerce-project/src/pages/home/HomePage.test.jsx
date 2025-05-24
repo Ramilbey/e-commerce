@@ -57,5 +57,8 @@ describe("HomePage component", () => {
         "Black and Gray Athletic Cotton Socks - 6 Pairs"
       )
     ).toBeInTheDocument();
+    expect(
+      within(productContainers[1]).getByText("Intermediate Size Basketball")
+    ).toBeInTheDocument();
   });
 });
