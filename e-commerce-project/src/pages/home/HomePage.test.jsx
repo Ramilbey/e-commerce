@@ -10,7 +10,13 @@ describe('HomePage component' ,() => {
     let loadCart;
     
   beforeEach(() => {
-    loadCart = vi.fn();
+      loadCart = vi.fn();
+      
+      axios.get.mockImplementation((urlPath) => {
+          if (urlPath === '/api/products') {
+              
+          }
+      })
   });
   it("displays the products correct ", () => {
     render(<HomePage cart={[]} loadCart={loadCart} />);
