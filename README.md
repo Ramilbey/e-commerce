@@ -12,4 +12,4 @@
 5. Updated all the links to work with routing
 
 Preview of Amazon
-[](./public/images.amazon.jpeg)
+![amazon](public/images.amazon.jpeg)
