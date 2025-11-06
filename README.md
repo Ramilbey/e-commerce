@@ -12,4 +12,4 @@
 5. Updated all the links to work with routing
 
 Preview of Amazon
-![amazon](e-commerce-project/public/images)
+![amazon](e-commerce-project/public/images/amazon.jpeg)
