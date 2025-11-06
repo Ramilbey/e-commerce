@@ -10,3 +10,6 @@
    - `CheckoutPage`
    - `OrdersPage`
 5. Updated all the links to work with routing
+
+Preview of Amazon
+[](./public/images.amazon.jpeg)
